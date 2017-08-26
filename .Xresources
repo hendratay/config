@@ -1,0 +1,37 @@
+! FONTS
+URxvt.font: -*-terminus-medium-*-*-*-12-*-*-*-*-*-*-*
+URxvt.letterSpace: 3
+
+! COLORS
+*.foreground: #19c103
+*.background: #000000
+*.cursorColor: #fdf6e3
+*color0: #073642
+*color8: #002b36
+*color1: #dc322f
+*color9: #cb4b16
+*color2: #859900
+*color10: #586e75
+*color3: #b58900
+*color11: #657b83
+*color4: #268bd2
+*color12: #839496
+*color5: #d33682
+*color13: #6c71c4
+*color6: #2aa198
+*color14: #93a1a1
+*color7: #eee8d5
+*color15: #fdf6e3
+
+! SCROLLBAR
+URxvt.scrollBar: false
+URxvt.cursorBlink: true
+URxvt.internalBorder: 9
+
+! Extension
+URxvt.perl-ext: default,url-select,clipboard
+URxvt.keysym.M-c: perl:clipboard:copy
+URxvt.keysym.M-v: perl:clipboard:paste
+URxvt.keysym.M-space: perl:url-select:select_next
+URxvt.url-select.launcher: /usr/bin/xdg-open
+URxvt.url-select.underline: true

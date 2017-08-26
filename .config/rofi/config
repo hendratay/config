@@ -1,0 +1,17 @@
+! ------------------------------------------------------------------------------
+! ROFI Color theme
+! ------------------------------------------------------------------------------
+rofi.color-enabled: true
+rofi.color-window: #000, #000, #19C103
+rofi.color-normal: #000, #839596, #000, #000, #19C103
+rofi.color-active: #000, #839596, #000, #000, #19C103
+rofi.color-urgent: #000, #839596, #000, #000, #19C103
+
+rofi.font: xos4 terminus 9
+rofi.padding: 9
+rofi.width: 9
+rofi.lines: 9
+rofi.line-margin: 3
+rofi.location: 5
+rofi.separator-style: solid
+rofi.hide-scrollbar: true
