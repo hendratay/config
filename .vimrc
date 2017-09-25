@@ -34,8 +34,8 @@ set number
 "movement
 nnoremap B ^
 nnoremap E $
-nmap <esc>d 6j
-nmap <esc>u 6k
+nmap <esc>d 9j
+nmap <esc>u 9k
 nnoremap <esc>-j <C-W><C-J>
 nnoremap <esc>-k <C-W><C-K>
 nnoremap <esc>-l <C-W><C-L>
@@ -102,10 +102,3 @@ nmap <leader>t :TagbarToggle<cr>
 "vimux/tmux commandline
 map <leader>vp :VimuxPromptCommand<cr>
 map <leader>vl :VimuxRunLastCommand<cr>
-    "django
-    map <leader>vd :VimuxPromptCommand("python manage.py runserver")<cr><cr>
-    map <leader>vc :VimuxPromptCommand("C-c")<cr><cr>
-"arduino
-nmap <leader>ac :!make<cr>
-nmap <leader>ad :!make upload<cr>
-nmap <leader>as :!make monitor<cr>
