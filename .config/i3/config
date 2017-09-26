@@ -102,16 +102,16 @@ bindsym $mod+a focus parent
 #bindsym $mod+d focus child
 
 # workspace
-set $workspace1 "1: web"
-set $workspace2 "2: code"
-set $workspace3 "3: term"
-set $workspace4 "4: media"
-set $workspace5 "5: pdf"
-set $workspace6 "6: editor"
-set $workspace7 "7: "
-set $workspace8 "8: "
-set $workspace9 "9: win7"
-set $workspace0 "0: home"
+set $workspace1 " web"
+set $workspace2 " code"
+set $workspace3 " shell"
+set $workspace4 " docs"
+set $workspace5 " media"
+set $workspace6 " editor"
+set $workspace7 " windows"
+set $workspace8 " "
+set $workspace9 " "
+set $workspace0 " "
 
 # switch to workspace
 bindsym $mod+1 workspace $workspace1
@@ -142,12 +142,12 @@ bindsym $mod+Shift+0 move container to workspace $workspace0
 
 assign [class="conky"] $workspace0
 assign [class="Firefox"] $workspace1
-assign [class="feh"] $workspace4
-assign [class="mpv"] $workspace4
-assign [class="Zathura"] $workspace5
+assign [class="feh"] $workspace5
+assign [class="mpv"] $workspace5
+assign [class="Zathura"] $workspace4
 assign [class="Gimp"] $workspace6
 assign [class="Inkscape"] $workspace6
-assign [class="VirtualBox"] $workspace9
+assign [class="VirtualBox"] $workspace7
 
 for_window [class="URxvt"] floating enable
 for_window [class="Thunar"] floating enable
@@ -229,7 +229,7 @@ exec --no-startup-id redshift-gtk
 # exec --no-startup-id gpick
 exec --no-startup-id ~/.config/touchpad.sh
 exec --no-startup-id i3-msg 'workspace $workspace1 ; exec firefox' 
-#exec --no-startup-id i3-msg 'workspace $workspace2 ; exec termite -e "./projects"' 
+exec --no-startup-id i3-msg 'workspace $workspace2 ; exec termite -e "./projects"' 
 exec --no-startup-id i3-msg 'workspace $workspace3 ; exec termite -e "tmux new -s shell"' 
 
 # Start i3bar to display a workspace bar (plus the system information i3status
