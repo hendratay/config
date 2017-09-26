@@ -250,3 +250,23 @@ bar {
             urgent_workspace   	$red        $red     	$base3
         }
 }
+
+bar {
+        workspace_buttons no
+        binding_mode_indicator no
+        tray_output none
+        status_command $HOME/.config/conky/conky-i3bar-bottom
+        position bottom
+        separator_symbol "|"
+        tray_padding 3
+        colors {
+            background	$wall
+            statusline	$base3
+            separator	$base00
+            # Class			    Border		Background	Text
+            focused_workspace  	$wall	 	$wall       $text
+            active_workspace   	$wall 	    $wall		$text
+            inactive_workspace 	$wall 	    $wall 	    $base0
+            urgent_workspace   	$red        $red     	$base3
+        }
+}
