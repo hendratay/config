@@ -140,7 +140,6 @@ bindsym $mod+Shift+8 move container to workspace $workspace8
 bindsym $mod+Shift+9 move container to workspace $workspace9
 bindsym $mod+Shift+0 move container to workspace $workspace0
 
-assign [class="conky"] $workspace0
 assign [class="Firefox"] $workspace1
 assign [class="feh"] $workspace5
 assign [class="mpv"] $workspace5
@@ -157,7 +156,6 @@ for_window [class="Lxappearance"] floating enable
 for_window [class="Blueman-manager"] floating enable
 for_window [class="Firefox" instance="Places"] floating enable
 for_window [class="Firefox" instance="Toplevel"] floating enable
-for_window [class="Termite"] fullscreen enable
 for_window [class="Gimp"] fullscreen enable
 for_window [class="Inkscape"] fullscreen enable
 
@@ -207,7 +205,7 @@ bindsym XF86AudioLowerVolume exec --no-startup-id amixer set Master 6.525dB-
 bindsym XF86AudioRaiseVolume exec --no-startup-id amixer set Master 6.525dB+
 bindsym XF86AudioMicMute exec --no-startup-id amixer set Capture toggle
 bindsym XF86Launch1 exec --no-startup-id ~/.config/touchpad.sh
-bindsym XF86ScreenSaver exec --no-startup-id i3lock -t -i ~/Pictures/hello.png -u
+bindsym XF86ScreenSaver exec --no-startup-id i3lock -t -i ~/Pictures/solarized.jpg -u
 #bindsym XF86WebCam exec --no-startup-id guvcview
 bindsym XF86AudioPrev exec --no-startup-id cmus-remote -r
 bindsym XF86AudioPlay exec --no-startup-id cmus-remote -u
@@ -223,13 +221,13 @@ bindsym $mod+m exec virtualbox --startvm 'Windows 7'
 bindsym $mod+s exec termite -e "tmux attach -t shell"
 
 # Execute
-exec_always --no-startup-id feh --bg-scale ~/Pictures/helloworld.png
+exec_always --no-startup-id feh --bg-scale ~/Pictures/solarized.jpg
 exec --no-startup-id redshift-gtk
 # exec --no-startup-id blueman-applet
 # exec --no-startup-id gpick
 exec --no-startup-id ~/.config/touchpad.sh
 exec --no-startup-id i3-msg 'workspace $workspace1 ; exec firefox' 
-exec --no-startup-id i3-msg 'workspace $workspace2 ; exec termite -e "./projects"' 
+#exec --no-startup-id i3-msg 'workspace $workspace2 ; exec termite -e "./.projects"' 
 exec --no-startup-id i3-msg 'workspace $workspace3 ; exec termite -e "tmux new -s shell"' 
 
 # Start i3bar to display a workspace bar (plus the system information i3status
@@ -240,13 +238,13 @@ bar {
         separator_symbol "|"
         tray_padding 3
         colors {
-            background	$wall
-            statusline	$base3
-            separator	$base00
+            background	$base02
+            statusline	$base1
+            separator	$red
             # Class			    Border		Background	Text
-            focused_workspace  	$wall	 	$wall       $text
-            active_workspace   	$wall 	    $wall		$text
-            inactive_workspace 	$wall 	    $wall 	    $base0
+            focused_workspace  	$base02	 	$base02     $base3
+            active_workspace   	$base02 	$base02		$base3
+            inactive_workspace 	$base02 	$base02 	$base1
             urgent_workspace   	$red        $red     	$base3
         }
 }
@@ -260,13 +258,8 @@ bar {
         separator_symbol "|"
         tray_padding 3
         colors {
-            background	$wall
-            statusline	$base3
-            separator	$base00
-            # Class			    Border		Background	Text
-            focused_workspace  	$wall	 	$wall       $text
-            active_workspace   	$wall 	    $wall		$text
-            inactive_workspace 	$wall 	    $wall 	    $base0
-            urgent_workspace   	$red        $red     	$base3
+            background	$base02
+            statusline	$base1
+            separator	$red
         }
 }

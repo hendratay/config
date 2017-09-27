@@ -10,24 +10,21 @@ override_utf8_locale yes
 
 TEXT
 [
-  #${if_match "${exec ~/.config/music.sh}" == "-"}
-  #${else}
-    #{ "full_text" : "music:" , "color" : "\#19C103" , "separator" : false , "separator_block_width" : 6 } ,
-    #{ "full_text" : "${exec ~/.config/music.sh}" } ,
-  #${endif}
-  #{ "full_text" : "brightness:" , "color" : "\#19C103" , "separator" : false , "separator_block_width" : 6 } ,
-  #{ "full_text" : "${exec xbacklight | cut -d '.' -f1}%" } ,
+  { "full_text" : "" , "color" : "\#fdf6e3" , "separator" : false , "separator_block_width" : 6 } ,
+  { "full_text" : "${exec xbacklight | cut -d '.' -f1}%" } ,
+  { "full_text" : "\u266c" , "color" : "\#fdf6e3" , "separator" : false , "separator_block_width" : 6 } ,
+  { "full_text" : "${exec ~/.config/music.sh}" } ,
 
-  { "full_text" : "\uf028" , "color" : "\#19C103" , "separator" : false , "separator_block_width" : 6 } ,
+  { "full_text" : "\uf028" , "color" : "\#fdf6e3" , "separator" : false , "separator_block_width" : 6 } ,
   { "full_text" : "${mixerbar}" } ,
-  { "full_text" : "\uf1eb" , "color" : "\#19C103" , "separator" : false , "separator_block_width" : 6 } ,
+  { "full_text" : "\uf1eb" , "color" : "\#fdf6e3" , "separator" : false , "separator_block_width" : 6 } ,
   { "full_text" : "${wireless_essid wlp3s0} (${addr wlp3s0})" } ,
-  { "full_text" : "\uf240" , "color" : "\#19C103" , "separator" : false , "separator_block_width" : 6 } ,
+  { "full_text" : "\uf240" , "color" : "\#fdf6e3" , "separator" : false , "separator_block_width" : 6 } ,
   { "full_text" : "${battery BAT0}" , "color" : ${if_match ${battery_percent BAT0}<20}"\#dc322f"${else}"\#fdf6e3"${endif} } ,
-  { "full_text" : "\uf073" , "color" : "\#19C103" , "separator" : false , "separator_block_width" : 6 } , 
+  { "full_text" : "\uf073" , "color" : "\#fdf6e3" , "separator" : false , "separator_block_width" : 6 } , 
   { "full_text" : "${time %d-%b-%Y}", "separator" : false , "separator_block_width" : 6 } ,
-  { "full_text" : "\uf017" , "color" : "\#19C103" , "separator" : false , "separator_block_width" : 6 } , 
+  { "full_text" : "\uf017" , "color" : "\#fdf6e3" , "separator" : false , "separator_block_width" : 6 } , 
   { "full_text" : "${time %I:%M%P}" } ,
-  { "full_text" : "" , "color" : "\#19C103" , "separator" : false , "separator_block_width" : 6 } ,
+  { "full_text" : "" , "color" : "\#fdf6e3" , "separator" : false , "separator_block_width" : 6 } ,
   { "full_text" : "${user_names}" }
 ],

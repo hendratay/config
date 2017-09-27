@@ -2,16 +2,16 @@
 ! ROFI Color theme
 ! ------------------------------------------------------------------------------
 rofi.color-enabled: true
-rofi.color-window: #000, #000, #19C103
-rofi.color-normal: #000, #839596, #000, #000, #19C103
-rofi.color-active: #000, #839596, #000, #000, #19C103
-rofi.color-urgent: #000, #839596, #000, #000, #19C103
+rofi.color-window: #073642, #073642, #dc322f
+rofi.color-normal: #073642, #819396, #073642, #003642, #819396
+rofi.color-active: #073642, #008ed4, #073642, #003642, #008ed4
+rofi.color-urgent: #073642, #da4281, #073642, #003642, #da4281
 
 rofi.font: xos4 terminus 9
-rofi.padding: 9
+rofi.padding: 6
 rofi.width: 9
-rofi.lines: 9
-rofi.line-margin: 3
-rofi.location: 5
+rofi.lines: 20
+rofi.line-margin: 6
+rofi.location: 4
 rofi.separator-style: solid
 rofi.hide-scrollbar: true

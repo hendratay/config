@@ -10,35 +10,35 @@ override_utf8_locale yes
 
 TEXT
 [
-  { "full_text" : "" , "color" : "\#19C103" , "separator" : false , "separator_block_width" : 6 } ,
+  { "full_text" : "" , "color" : "\#fdf6e3" , "separator" : false , "separator_block_width" : 6 } ,
   { "full_text" : "${upspeed wlp3s0} (${totalup wlp3s0})" , "min_width" : 108 , "align" : "right" } ,
-  { "full_text" : "" , "color" : "\#19C103" , "separator" : false , "separator_block_width" : 6 } ,
+  { "full_text" : "" , "color" : "\#fdf6e3" , "separator" : false , "separator_block_width" : 6 } ,
   { "full_text" : "${downspeed wlp3s0} (${totaldown wlp3s0})" , "min_width" : 108 , "align" : "right" , "separator" : false, "separator_block_width" : 6 } ,
 
   { "full_text" : ">>>" , "color" : "\#dc322f" , "separator" : false , "separator_block_width" : 6 } ,
 
-  { "full_text" : "" , "color" : "\#19C103" , "separator" : false , "separator_block_width" : 6 } ,
+  { "full_text" : "" , "color" : "\#fdf6e3" , "separator" : false , "separator_block_width" : 6 } ,
   { "full_text" : "${nodename} (${machine})" } ,
-  { "full_text" : "" , "color" : "\#19C103" , "separator" : false , "separator_block_width" : 6 } ,
+  { "full_text" : "" , "color" : "\#fdf6e3" , "separator" : false , "separator_block_width" : 6 } ,
   { "full_text" : "${kernel}" , "separator" : false , "separator_block_width" : 6 } ,
 
   { "full_text" : "<<<" , "color" : "\#dc322f" , "separator" : false , "separator_block_width" : 6 } ,
 
-  { "full_text" : "" , "color" : "\#19C103" , "separator" : false , "separator_block_width" : 6 } ,
+  { "full_text" : "" , "color" : "\#fdf6e3" , "separator" : false , "separator_block_width" : 6 } ,
   { "full_text" : "${fs_used_perc}% (${fs_used}/${fs_size})" } ,
-  { "full_text" : "" , "color" : "\#19C103" , "separator" : false , "separator_block_width" : 6 } ,
+  { "full_text" : "" , "color" : "\#fdf6e3" , "separator" : false , "separator_block_width" : 6 } ,
   { "full_text" : "${fs_used_perc /home/tay}% (${fs_used /home/tay}/${fs_size /home/tay})" } ,
-  { "full_text" : "" , "color" : "\#19C103" , "separator" : false , "separator_block_width" : 6 } ,
+  { "full_text" : "" , "color" : "\#fdf6e3" , "separator" : false , "separator_block_width" : 6 } ,
   { "full_text" : "${memperc}% (${mem}/${memmax})" } ,
-  { "full_text" : "" , "color" : "\#19C103" , "separator" : false , "separator_block_width" : 6 } ,
+  { "full_text" : "" , "color" : "\#fdf6e3" , "separator" : false , "separator_block_width" : 6 } ,
   { "full_text" : "${cpu cpu0}% (${freq_g} GHz)" , "min_width" : 88 , "align": "right" } ,
-  { "full_text" : "" , "color" : "\#19C103" , "separator" : false , "separator_block_width" : 6 } ,
+  { "full_text" : "" , "color" : "\#fdf6e3" , "separator" : false , "separator_block_width" : 6 } ,
   { "full_text" : "${hwmon temp 1}\u2103" } ,
-  { "full_text" : "" , "color" : "\#19C103" , "separator" : false , "separator_block_width" : 6 } ,
+  { "full_text" : "" , "color" : "\#fdf6e3" , "separator" : false , "separator_block_width" : 6 } ,
   { "full_text" : "${ibm_fan} rpm" , "min_width" : 48 , "align" : "right" , "separator" : false , "separator_block_width" : 6 } ,
 
   { "full_text" : ">>>" , "color" : "\#dc322f" , "separator" : false , "separator_block_width" : 6 } ,
 
-  { "full_text" : "" , "color" : "\#19C103" , "separator" : false , "separator_block_width" : 6 } ,
+  { "full_text" : "" , "color" : "\#fdf6e3" , "separator" : false , "separator_block_width" : 6 } ,
   { "full_text" : "${uptime}" , "min_width" : 68 , "align" : "right" } 
 ],

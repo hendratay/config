@@ -3,8 +3,8 @@ URxvt.font: -*-terminus-medium-*-*-*-12-*-*-*-*-*-*-*
 URxvt.letterSpace: 3
 
 ! COLORS
-*.foreground: #19c103
-*.background: #000000
+*.foreground: #839496
+*.background: #073642
 *.cursorColor: #fdf6e3
 *color0: #073642
 *color8: #002b36
