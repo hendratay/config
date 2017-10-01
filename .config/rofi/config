@@ -3,9 +3,9 @@
 ! ------------------------------------------------------------------------------
 rofi.color-enabled: true
 rofi.color-window: #073642, #073642, #dc322f
-rofi.color-normal: #073642, #819396, #073642, #003642, #819396
-rofi.color-active: #073642, #008ed4, #073642, #003642, #008ed4
-rofi.color-urgent: #073642, #da4281, #073642, #003642, #da4281
+rofi.color-normal: #073642, #819396, #073642, #fdf6e3, #819396
+rofi.color-active: #073642, #008ed4, #073642, #fdf6e3, #008ed4
+rofi.color-urgent: #073642, #da4281, #073642, #fdf6e3, #da4281
 
 rofi.font: xos4 terminus 9
 rofi.padding: 6

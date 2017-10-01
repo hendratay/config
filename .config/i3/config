@@ -86,8 +86,8 @@ bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
 #bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
+#bindsym $mod+w layout tabbed
+#bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
@@ -96,7 +96,7 @@ bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
 
 # focus the parent container
-bindsym $mod+a focus parent
+#bindsym $mod+a focus parent
 
 # focus the child container
 #bindsym $mod+d focus child
@@ -156,14 +156,12 @@ for_window [class="Lxappearance"] floating enable
 for_window [class="Blueman-manager"] floating enable
 for_window [class="Firefox" instance="Places"] floating enable
 for_window [class="Firefox" instance="Toplevel"] floating enable
-for_window [class="Gimp"] fullscreen enable
-for_window [class="Inkscape"] fullscreen enable
 
 floating_minimum_size 75 x 50
 floating_maximum_size -1 x -1
 
 # reload the configuration file
-bindsym $mod+c reload
+#bindsym $mod+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+r restart
 
@@ -205,7 +203,7 @@ bindsym XF86AudioLowerVolume exec --no-startup-id amixer set Master 6.525dB-
 bindsym XF86AudioRaiseVolume exec --no-startup-id amixer set Master 6.525dB+
 bindsym XF86AudioMicMute exec --no-startup-id amixer set Capture toggle
 bindsym XF86Launch1 exec --no-startup-id ~/.config/touchpad.sh
-bindsym XF86ScreenSaver exec --no-startup-id i3lock -t -i ~/Pictures/solarized.jpg -u
+bindsym XF86ScreenSaver exec --no-startup-id i3lock -t -i ~/Pictures/solarized.png -u
 #bindsym XF86WebCam exec --no-startup-id guvcview
 bindsym XF86AudioPrev exec --no-startup-id cmus-remote -r
 bindsym XF86AudioPlay exec --no-startup-id cmus-remote -u
@@ -215,10 +213,10 @@ bindsym --release Shift+Print exec --no-startup-id scrot -s ~/Pictures/%Y-%m-%d-
 
 bindsym $mod+t exec Thunar
 bindsym $mod+b exec firefox
-bindsym $mod+g exec gimp
 bindsym $mod+z exec zathura
-bindsym $mod+m exec virtualbox --startvm 'Windows 7'
+bindsym $mod+w exec virtualbox --startvm 'Windows 7'
 bindsym $mod+s exec termite -e "tmux attach -t shell"
+bindsym $mod+c exec termite -e "tmux attach -t development"
 
 # Execute
 exec_always --no-startup-id feh --bg-scale ~/Pictures/solarized.jpg
@@ -236,7 +234,7 @@ bar {
         status_command $HOME/.config/conky/conky-i3bar
         position top
         separator_symbol "|"
-        tray_padding 3
+        tray_padding 2
         colors {
             background	$base02
             statusline	$base1

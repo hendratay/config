@@ -20,11 +20,14 @@ TEXT
   { "full_text" : "\uf1eb" , "color" : "\#fdf6e3" , "separator" : false , "separator_block_width" : 6 } ,
   { "full_text" : "${wireless_essid wlp3s0} (${addr wlp3s0})" } ,
   { "full_text" : "\uf240" , "color" : "\#fdf6e3" , "separator" : false , "separator_block_width" : 6 } ,
-  { "full_text" : "${battery BAT0}" , "color" : ${if_match ${battery_percent BAT0}<20}"\#dc322f"${else}"\#fdf6e3"${endif} } ,
+  { "full_text" : "${battery BAT0}" , "color" :
+                    ${if_match ${battery_percent BAT0}<20}"\#dc322f"
+                    ${else}"\#93a1a1"
+                    ${endif} } ,
   { "full_text" : "\uf073" , "color" : "\#fdf6e3" , "separator" : false , "separator_block_width" : 6 } , 
   { "full_text" : "${time %d-%b-%Y}", "separator" : false , "separator_block_width" : 6 } ,
   { "full_text" : "\uf017" , "color" : "\#fdf6e3" , "separator" : false , "separator_block_width" : 6 } , 
-  { "full_text" : "${time %I:%M%P}" } ,
+  { "full_text" : "${time %H:%M:%S}" } ,
   { "full_text" : "" , "color" : "\#fdf6e3" , "separator" : false , "separator_block_width" : 6 } ,
   { "full_text" : "${user_names}" }
 ],
