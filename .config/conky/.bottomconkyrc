@@ -7,13 +7,24 @@ max_text_width 0
 update_interval 0.3
 total_run_times 0
 override_utf8_locale yes
+if_up_strictness address
 
 TEXT
 [
   { "full_text" : "" , "color" : "\#fdf6e3" , "separator" : false , "separator_block_width" : 6 } ,
-  { "full_text" : "${upspeed wlp3s0} (${totalup wlp3s0})" , "min_width" : 108 , "align" : "right" } ,
+  { "full_text" : ${if_up enp0s25} "${upspeed enp0s25} (${totalup enp0s25})" ,
+                    ${else} ${if_up wlp3s0} "${upspeed wlp3s0} (${totalup wlp3s0})" ,
+                    ${else} " * Network Off * " , ${endif}
+                  ${endif}
+                  "min_width" : 108 , "align" : "right"
+  } ,
   { "full_text" : "" , "color" : "\#fdf6e3" , "separator" : false , "separator_block_width" : 6 } ,
-  { "full_text" : "${downspeed wlp3s0} (${totaldown wlp3s0})" , "min_width" : 108 , "align" : "right" , "separator" : false, "separator_block_width" : 6 } ,
+  { "full_text" : ${if_up enp0s25} "${downspeed enp0s25} (${totaldown enp0s25})" ,
+                    ${else} ${if_up wlp3s0}  "${downspeed wlp3s0} (${totaldown wlp3s0})" ,
+                    ${else} " * Network Off * " , ${endif}
+                  ${endif}
+                  "min_width" : 108 , "align" : "right" , "separator" : false, "separator_block_width" : 6
+  } ,
 
   { "full_text" : ">>>" , "color" : "\#dc322f" , "separator" : false , "separator_block_width" : 6 } ,
 

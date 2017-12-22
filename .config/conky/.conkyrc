@@ -7,27 +7,57 @@ max_text_width 0
 update_interval 0.3
 total_run_times 0
 override_utf8_locale yes
+if_up_strictness address
 
 TEXT
 [
   { "full_text" : "" , "color" : "\#fdf6e3" , "separator" : false , "separator_block_width" : 6 } ,
   { "full_text" : "${exec xbacklight | cut -d '.' -f1}%" } ,
+
   { "full_text" : "\u266c" , "color" : "\#fdf6e3" , "separator" : false , "separator_block_width" : 6 } ,
   { "full_text" : "${exec ~/.config/music.sh}" } ,
 
-  { "full_text" : "\uf028" , "color" : "\#fdf6e3" , "separator" : false , "separator_block_width" : 6 } ,
+  { "full_text" : ${if_mixer_mute} "" ,
+                  ${else} "" ,
+                  ${endif}
+                  "color" : "\#fdf6e3" , "separator" : false , "separator_block_width" : 6
+  } ,
   { "full_text" : "${mixerbar}" } ,
-  { "full_text" : "\uf1eb" , "color" : "\#fdf6e3" , "separator" : false , "separator_block_width" : 6 } ,
-  { "full_text" : "${wireless_essid wlp3s0} (${addr wlp3s0})" } ,
-  { "full_text" : "\uf240" , "color" : "\#fdf6e3" , "separator" : false , "separator_block_width" : 6 } ,
+
+  { "full_text" : ${if_up enp0s25} "" ,
+                    ${else} ${if_up wlp3s0} "" ,
+                    ${else} "" , ${endif}
+                  ${endif}
+                  "color" : "\#fdf6e3" , "separator" : false , "separator_block_width" : 6
+  } ,
+  { "full_text" : ${if_up enp0s25} "Ethernet (${addr enp0s25})"
+                    ${else} ${if_up wlp3s0} "${wireless_essid wlp3s0} (${addr wlp3s0})"
+                    ${else} "Network Off" ${endif}
+                  ${endif}
+  } ,
+
+  { "full_text" : ${if_existing /sys/class/power_supply/AC/online 0}
+                    ${if_match ${battery_percent BAT0} <= 5} "" , ${endif}
+                    ${if_match ${battery_percent BAT0} > 5} ${if_match ${battery_percent BAT0} <= 25} "" , ${endif} ${endif}
+                    ${if_match ${battery_percent BAT0} > 25} ${if_match ${battery_percent BAT0} <= 50} "" , ${endif} ${endif}
+                    ${if_match ${battery_percent BAT0} > 50} ${if_match ${battery_percent BAT0} <= 75} "" , ${endif} ${endif}
+                    ${if_match ${battery_percent BAT0} > 75} ${if_match ${battery_percent BAT0} <= 100} "" , ${endif} ${endif}
+                  ${else}
+                    "" ,
+                  ${endif}
+                  "color" : "\#fdf6e3" , "separator" : false , "separator_block_width" : 6
+  } ,
   { "full_text" : "${battery BAT0}" , "color" :
-                    ${if_match ${battery_percent BAT0}<20}"\#dc322f"
-                    ${else}"\#93a1a1"
-                    ${endif} } ,
+                   ${if_match ${battery_percent BAT0} < 15} "\#dc322f"
+                   ${else} "\#93a1a1"
+                   ${endif}
+  } ,
+
   { "full_text" : "\uf073" , "color" : "\#fdf6e3" , "separator" : false , "separator_block_width" : 6 } , 
   { "full_text" : "${time %d-%b-%Y}", "separator" : false , "separator_block_width" : 6 } ,
   { "full_text" : "\uf017" , "color" : "\#fdf6e3" , "separator" : false , "separator_block_width" : 6 } , 
   { "full_text" : "${time %H:%M:%S}" } ,
+
   { "full_text" : "" , "color" : "\#fdf6e3" , "separator" : false , "separator_block_width" : 6 } ,
   { "full_text" : "${user_names}" }
 ],
