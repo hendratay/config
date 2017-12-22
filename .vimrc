@@ -25,12 +25,14 @@ filetype plugin indent on
 let mapleader="\<Space>"
 nmap <leader>w :w<cr>
 nmap <leader>q :q<cr>
+set noswapfile
 "spaces and tabs
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set expandtab
 set number
+set relativenumber
 "movement
 nnoremap B ^
 nnoremap E $
@@ -69,6 +71,9 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline_theme='solarized'
+let g:WebDevIconsNerdTreeAfterGlyphPadding = ' '
+let g:WebDevIconsUnicodeDecorateFolderNodes = 1
+let g:DevIconsEnableFoldersOpenClose = 1
 "indentline
 let g:indentLine_char = '┆'
 
@@ -76,8 +81,12 @@ let g:indentLine_char = '┆'
 "File Navigation
 "nerdtree
 map <leader>n :NERDTreeToggle<cr>
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 "ctrlp
-nnoremap <Leader>o :CtrlP<cr>
+nnoremap <Leader>f :CtrlP<cr>
+nnoremap <Leader>o :CtrlPMRU<cr>
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 let g:ctrlp_custom_ignore = {
@@ -89,14 +98,15 @@ let g:ctrlp_working_path_mode = ''
 
 
 "Programming
+set cursorline
+set colorcolumn=80
 "fugitive
 nmap <leader>gs :Gstatus<cr>
 nmap <leader>gw :Gwrite<cr>
 nmap <leader>gc :Gcommit<cr>
+nmap <leader>gd :Gdiff<cr>
 nmap <leader>gb :Gblame<cr>
 nmap <leader>gl :Glog<cr>
-nmap <leader>gp :cprev<cr>
-nmap <leader>gn :cnext<cr>
 "tagbar
 nmap <leader>t :TagbarToggle<cr>
 "vimux/tmux commandline

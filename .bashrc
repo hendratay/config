@@ -54,5 +54,5 @@ export BOOTLOADER_PARENT=/usr/share/arduino/hardware/archlinux-arduino/avr/bootl
 export ARDUINO_PLATFORM_LIB_PATH=/usr/share/arduino/hardware/archlinux-arduino/avr/libraries
 
 # Android
-export PATH=$PATH:~/Android/tools
-export PATH=$PATH:~/Android/tools/bin
+export PATH=$PATH:~/Android/Sdk/tools
+export PATH=$PATH:~/Android/Sdk/tools/bin

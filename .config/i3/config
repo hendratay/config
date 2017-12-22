@@ -42,8 +42,8 @@ new_float pixel 0
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec urxvt
-bindsym Mod1+Return exec termite
+bindsym $mod+Return exec termite
+bindsym Mod1+Return exec urxvt
 
 # kill focused window
 bindsym $mod+q kill
@@ -109,9 +109,9 @@ set $workspace4 " docs"
 set $workspace5 " media"
 set $workspace6 " editor"
 set $workspace7 " windows"
-set $workspace8 " "
-set $workspace9 " "
-set $workspace0 " "
+set $workspace8 " macintosh"
+set $workspace9 " steam"
+set $workspace0 " home"
 
 # switch to workspace
 bindsym $mod+1 workspace $workspace1
@@ -141,21 +141,26 @@ bindsym $mod+Shift+9 move container to workspace $workspace9
 bindsym $mod+Shift+0 move container to workspace $workspace0
 
 assign [class="Firefox"] $workspace1
-assign [class="feh"] $workspace5
+assign [class="jetbrains-studio"] $workspace2
 assign [class="mpv"] $workspace5
 assign [class="Zathura"] $workspace4
 assign [class="Gimp"] $workspace6
 assign [class="Inkscape"] $workspace6
-assign [class="VirtualBox"] $workspace7
+assign [class="(?i)steam"] $workspace9
 
+for_window [title="Windows 7"] move to workspace " windows"
+for_window [title="Android Emulator"] floating enable
 for_window [class="URxvt"] floating enable
+for_window [class="feh"] floating enable
 for_window [class="Thunar"] floating enable
 for_window [class="Gpick"] floating enable
 for_window [class="Pavucontrol"] floating enable
 for_window [class="Lxappearance"] floating enable
 for_window [class="Blueman-manager"] floating enable
+for_window [class="Firefox" instance="Navigator"] floating enable
 for_window [class="Firefox" instance="Places"] floating enable
 for_window [class="Firefox" instance="Toplevel"] floating enable
+for_window [class="(?i)steam" title="Friends"] floating enable
 
 floating_minimum_size 75 x 50
 floating_maximum_size -1 x -1
@@ -198,7 +203,7 @@ set $mode_display display: dp | vga
 bindsym XF86Display mode "$mode_display"
 
 # Multimedia Keys
-bindsym XF86AudioMute exec --no-startup-id amixer set Master toggle
+bindsym XF86AudioMute exec --no-startup-id amixer -D pulse set Master Playback Switch toggle
 bindsym XF86AudioLowerVolume exec --no-startup-id amixer set Master 6.525dB-
 bindsym XF86AudioRaiseVolume exec --no-startup-id amixer set Master 6.525dB+
 bindsym XF86AudioMicMute exec --no-startup-id amixer set Capture toggle
@@ -211,15 +216,14 @@ bindsym XF86AudioNext exec --no-startup-id cmus-remote -n
 bindsym --release Print exec --no-startup-id scrot ~/Pictures/%Y-%m-%d-%T-screenshot.jpeg
 bindsym --release Shift+Print exec --no-startup-id scrot -s ~/Pictures/%Y-%m-%d-%T-screenshot.jpeg
 
+bindsym $mod+s exec /opt/android-studio/bin/studio.sh
 bindsym $mod+t exec Thunar
 bindsym $mod+b exec firefox
 bindsym $mod+z exec zathura
 bindsym $mod+w exec virtualbox --startvm 'Windows 7'
-bindsym $mod+s exec termite -e "tmux attach -t shell"
-bindsym $mod+c exec termite -e "tmux attach -t development"
 
 # Execute
-exec_always --no-startup-id feh --bg-scale ~/Pictures/solarized.jpg
+exec_always --no-startup-id feh --bg-scale ~/Pictures/simple.png
 exec --no-startup-id redshift-gtk
 # exec --no-startup-id blueman-applet
 # exec --no-startup-id gpick
