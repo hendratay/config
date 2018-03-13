@@ -17,12 +17,12 @@ TEXT
   { "full_text" : "\u266c" , "color" : "\#fdf6e3" , "separator" : false , "separator_block_width" : 6 } ,
   { "full_text" : "${exec ~/.config/music.sh}" } ,
 
-  { "full_text" : ${if_mixer_mute} "" ,
-                  ${else} "" ,
-                  ${endif}
-                  "color" : "\#fdf6e3" , "separator" : false , "separator_block_width" : 6
-  } ,
-  { "full_text" : "${mixerbar}" } ,
+  #{ "full_text" : ${if_mixer_mute} "" ,
+                  #${else} "" ,
+                  #${endif}
+                  #"color" : "\#fdf6e3" , "separator" : false , "separator_block_width" : 6
+  #} ,
+  #{ "full_text" : "${mixerbar}" } ,
 
   { "full_text" : ${if_up enp0s25} "" ,
                     ${else} ${if_up wlp3s0} "" ,
@@ -47,9 +47,11 @@ TEXT
                   ${endif}
                   "color" : "\#fdf6e3" , "separator" : false , "separator_block_width" : 6
   } ,
-  { "full_text" : "${battery BAT0}" , "color" :
-                   ${if_match ${battery_percent BAT0} < 15} "\#dc322f"
-                   ${else} "\#93a1a1"
+  { "full_text" : ${if_existing /sys/class/power_supply/BAT0/present 1}
+                    "${battery BAT0}" , "color" : ${if_match ${battery_percent BAT0} < 15} "\#dc322f"
+                                                  ${else} "\#93a1a1"
+                                                  ${endif}
+                   ${else} "No Battery"
                    ${endif}
   } ,
 
