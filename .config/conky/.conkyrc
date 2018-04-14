@@ -11,18 +11,19 @@ if_up_strictness address
 
 TEXT
 [
-  { "full_text" : "" , "color" : "\#fdf6e3" , "separator" : false , "separator_block_width" : 6 } ,
-  { "full_text" : "${exec xbacklight | cut -d '.' -f1}%" } ,
+  { "full_text" : "" , "color" : "\#fdf6e3" , "separator" : false , "separator_block_width" : 6 } ,
+  { "full_text" : "${mpd_title}" , "separator" : false , "separator_block_width" : 6 } ,
+  { "full_text" : "(${mpd_status})" , "color" : "\#fdf6e3" } ,
 
-  { "full_text" : "\u266c" , "color" : "\#fdf6e3" , "separator" : false , "separator_block_width" : 6 } ,
-  { "full_text" : "${exec ~/.config/music.sh}" } ,
-
-  #{ "full_text" : ${if_mixer_mute} "" ,
-                  #${else} "" ,
-                  #${endif}
-                  #"color" : "\#fdf6e3" , "separator" : false , "separator_block_width" : 6
-  #} ,
-  #{ "full_text" : "${mixerbar}" } ,
+  { "full_text" : ${if_pa_sink_muted} "" ,
+                  ${else} "" ,
+                  ${endif}
+                  "color" : "\#fdf6e3" , "separator" : false , "separator_block_width" : 6
+  } ,
+  { "full_text" : ${if_pa_sink_muted} "0%"
+                  ${else} "${pa_sink_volume}%"
+                  ${endif}
+  } ,
 
   { "full_text" : ${if_up enp0s25} "" ,
                     ${else} ${if_up wlp3s0} "" ,
@@ -60,6 +61,9 @@ TEXT
   { "full_text" : "\uf017" , "color" : "\#fdf6e3" , "separator" : false , "separator_block_width" : 6 } , 
   { "full_text" : "${time %H:%M:%S}" } ,
 
-  { "full_text" : "" , "color" : "\#fdf6e3" , "separator" : false , "separator_block_width" : 6 } ,
-  { "full_text" : "${user_names}" }
+  { "full_text" : "" , "color" : "\#fdf6e3" , "separator" : false , "separator_block_width" : 6 } ,
+  { "full_text" : "${uptime}" , "min_width" : 68 , "align" : "right" }  ,
+
+  { "full_text" : "" , "color" : "\#fdf6e3" , "separator" : false , "separator_block_width" : 6 } ,
+  { "full_text" : "${exec xbacklight | cut -d '.' -f1}%" }
 ],

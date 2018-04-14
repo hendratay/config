@@ -1,6 +1,6 @@
 # Font
 [options]
-font = Source Code Pro SemiBold 8
+font = SauceCodePro Nerd Font SemiBold 9.3
 
 # Solarized dark and light color scheme
 
@@ -9,7 +9,7 @@ font = Source Code Pro SemiBold 8
 foreground = #839496
 foreground_bold = #eee8d5
 #foreground_dim = #888888
-background = #002b36 // dark
+background = #002b36
 cursor = #93a1a1
 
 # LIGHT

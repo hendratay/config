@@ -16,10 +16,8 @@ export EDITOR="$VISUAL"
 
 # Command
 alias q="exit"
-alias cl="clear"
 alias la="ls -al"
 alias win7="virtualbox --startvm 'Windows 7'"
-alias trans="trans -sp"
 
 # Mount Drives
 alias id1="udisksctl mount -b /dev/sdb1"
@@ -32,14 +30,8 @@ alias idm="udisksctl mount -b /dev/mmcblk0p1"
 alias edm="udisksctl unmount -b /dev/mmcblk0p1"
 
 # Tmux
-alias shell="tmux new -s shell"
 alias tls="tmux list-session"
-alias tat="tmux attach"
 alias tkl="tmux kill-session"
-alias tas="tmux attach -t shell"
-alias tad="tmux attach -t development"
-alias tks="tmux kill-session -t shell"
-alias tkd="tmux kill-session -t development"
 
 # Arduino
 export ARDUINO_DIR=/usr/share/arduino

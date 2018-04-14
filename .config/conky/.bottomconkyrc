@@ -38,7 +38,7 @@ TEXT
   { "full_text" : "" , "color" : "\#fdf6e3" , "separator" : false , "separator_block_width" : 6 } ,
   { "full_text" : "${fs_used_perc}% (${fs_used}/${fs_size})" } ,
   { "full_text" : "" , "color" : "\#fdf6e3" , "separator" : false , "separator_block_width" : 6 } ,
-  { "full_text" : "${fs_used_perc /home/tay}% (${fs_used /home/tay}/${fs_size /home/tay})" } ,
+  { "full_text" : "${fs_used_perc /home/hendratay}% (${fs_used /home/hendratay}/${fs_size /home/hendratay})" } ,
   { "full_text" : "" , "color" : "\#fdf6e3" , "separator" : false , "separator_block_width" : 6 } ,
   { "full_text" : "${memperc}% (${mem}/${memmax})" } ,
   { "full_text" : "" , "color" : "\#fdf6e3" , "separator" : false , "separator_block_width" : 6 } ,
@@ -50,6 +50,6 @@ TEXT
 
   { "full_text" : ">>>" , "color" : "\#dc322f" , "separator" : false , "separator_block_width" : 6 } ,
 
-  { "full_text" : "" , "color" : "\#fdf6e3" , "separator" : false , "separator_block_width" : 6 } ,
-  { "full_text" : "${uptime}" , "min_width" : 68 , "align" : "right" } 
+  { "full_text" : "" , "color" : "\#fdf6e3" , "separator" : false , "separator_block_width" : 6 } ,
+  { "full_text" : "${user_names}" }
 ],
