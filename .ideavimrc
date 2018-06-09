@@ -1,0 +1,15 @@
+" moving blocks of text
+vnoremap < <gv
+vnoremap > >gv
+
+" split window
+nnoremap <a-a>\ :vsplit<CR>
+nnoremap <a-a>- :split<CR>
+
+" switch window and tab
+nnoremap <a-h> <c-w>h
+nnoremap <a-j> <c-w>j
+nnoremap <a-k> <c-w>k
+nnoremap <a-l> <c-w>l
+nnoremap J gT
+nnoremap K gt

@@ -17,7 +17,6 @@ export EDITOR="$VISUAL"
 # Command
 alias q="exit"
 alias la="ls -al"
-alias win7="virtualbox --startvm 'Windows 7'"
 
 # Mount Drives
 alias id1="udisksctl mount -b /dev/sdb1"
@@ -44,7 +43,3 @@ export BOARDS_TXT=/usr/share/arduino/hardware/archlinux-arduino/avr/boards.txt
 export ARDUINO_VAR_PATH=/usr/share/arduino/hardware/archlinux-arduino/avr/variants
 export BOOTLOADER_PARENT=/usr/share/arduino/hardware/archlinux-arduino/avr/bootloaders
 export ARDUINO_PLATFORM_LIB_PATH=/usr/share/arduino/hardware/archlinux-arduino/avr/libraries
-
-# Android
-export PATH=$PATH:~/Android/Sdk/tools
-export PATH=$PATH:~/Android/Sdk/tools/bin

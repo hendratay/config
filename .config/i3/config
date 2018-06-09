@@ -139,27 +139,34 @@ bindsym $mod+Shift+8 move container to workspace $workspace8
 bindsym $mod+Shift+9 move container to workspace $workspace9
 bindsym $mod+Shift+0 move container to workspace $workspace0
 
-assign [class="Firefox"] $workspace1
+assign [class="Chromium"] $workspace1
 assign [class="jetbrains-studio"] $workspace2
+assign [class="jetbrains-idea-ce"] $workspace2
 assign [class="Termite"] $workspace3
-assign [class="mpv"] $workspace5
 assign [class="Zathura"] $workspace4
+assign [class="Unity"] $workspace6
+assign [class="mpv"] $workspace5
 assign [class="Gimp"] $workspace6
 assign [class="Inkscape"] $workspace6
 assign [class="(?i)steam"] $workspace9
 
+for_window [title="LINE"] move to workspace " home"
 for_window [title="Windows 7"] move to workspace " windows"
-for_window [title="Android Emulator"] floating enable
+for_window [title="macOS Sierra"] move to workspace " macintosh"
+
+for_window [title="LINE"] floating enable
+for_window [title="Android Virtual Device Manager"] floating enable
+for_window [title="Genymotion"] floating enable
 for_window [class="URxvt"] floating enable
 for_window [class="feh"] floating enable
 for_window [class="Thunar"] floating enable
 for_window [class="Gpick"] floating enable
 for_window [class="Pavucontrol"] floating enable
 for_window [class="Lxappearance"] floating enable
-for_window [class="Firefox" instance="Navigator"] floating enable
-for_window [class="Firefox" instance="Places"] floating enable
-for_window [class="Firefox" instance="Toplevel"] floating enable
-for_window [class="(?i)steam" title="Friends"] floating enable
+for_window [class="Unity" title="Starting Unity..."] floating enable
+for_window [class="Unity" title="Hold On"] floating enable
+for_window [class="Steam" title="Friends"] floating enable
+for_window [class="Steam" title="Steam - News"] floating enable
 
 floating_minimum_size 75 x 50
 floating_maximum_size -1 x -1
@@ -215,18 +222,23 @@ bindsym XF86AudioNext exec --no-startup-id mpc next
 bindsym --release Print exec --no-startup-id scrot ~/Picture/%Y-%m-%d-%T-screenshot.jpeg
 bindsym --release Shift+Print exec --no-startup-id scrot -s ~/Picture/%Y-%m-%d-%T-screenshot.jpeg
 
-bindsym $mod+s exec /opt/android-studio/bin/studio.sh
-bindsym $mod+c exec termite -e "tmux attach -t shell" 
-bindsym $mod+t exec Thunar
-bindsym $mod+b exec firefox
-bindsym $mod+z exec zathura
-bindsym $mod+w exec virtualbox --startvm 'Windows 7'
+bindsym $mod+t exec --no-startup-id Thunar
+bindsym $mod+b exec --no-startup-id chromium
+bindsym $mod+c exec --no-startup-id /opt/android-studio/bin/studio.sh
+bindsym $mod+i exec --no-startup-id /opt/intellij-idea/bin/idea.sh
+bindsym $mod+u exec --no-startup-id unity-editor
+bindsym $mod+s exec --no-startup-id termite -e "tmux attach -t shell" 
+bindsym $mod+z exec --no-startup-id zathura
+bindsym $mod+w exec --no-startup-id virtualbox --startvm 'Windows 7'
+bindsym $mod+m exec --no-startup-id virtualbox --startvm 'macOS Sierra'
+bindsym $mod+a exec --no-startup-id /opt/genymobile/genymotion/player --vm-name 'Android Oreo'
+bindsym $mod+g exec --no-startup-id steam
 
 # Execute
 exec_always --no-startup-id feh --bg-scale ~/Picture/done.jpg
 exec --no-startup-id redshift-gtk
 exec --no-startup-id ~/.config/touchpad.sh
-exec --no-startup-id i3-msg 'workspace $workspace1 ; exec firefox' 
+exec --no-startup-id i3-msg 'workspace $workspace1 ; exec chromium'
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
@@ -263,4 +275,4 @@ bar {
 }
 
 # i3-gaps
-gaps outer 5
+# gaps outer 5
