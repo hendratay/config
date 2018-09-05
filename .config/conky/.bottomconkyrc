@@ -51,5 +51,5 @@ TEXT
   { "full_text" : ">>>" , "color" : "\#dc322f" , "separator" : false , "separator_block_width" : 6 } ,
 
   { "full_text" : "" , "color" : "\#fdf6e3" , "separator" : false , "separator_block_width" : 6 } ,
-  { "full_text" : "${user_names}" }
+  { "full_text" : "${uid_name 1000}" }
 ],
