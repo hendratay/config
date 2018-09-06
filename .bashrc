@@ -43,3 +43,9 @@ export BOARDS_TXT=/usr/share/arduino/hardware/archlinux-arduino/avr/boards.txt
 export ARDUINO_VAR_PATH=/usr/share/arduino/hardware/archlinux-arduino/avr/variants
 export BOOTLOADER_PARENT=/usr/share/arduino/hardware/archlinux-arduino/avr/bootloaders
 export ARDUINO_PLATFORM_LIB_PATH=/usr/share/arduino/hardware/archlinux-arduino/avr/libraries
+
+# Flutter
+export PATH=$PATH:/opt/flutter/bin
+
+# Ruby
+export PATH=$PATH:/home/hendratay/.gem/ruby/2.5.0/bin
