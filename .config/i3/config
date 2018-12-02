@@ -75,10 +75,10 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $mod+v split h
+bindsym $mod+backslash split h
 
 # split in vertical orientation
-bindsym $mod+x split v
+bindsym $mod+minus split v
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
@@ -141,6 +141,7 @@ bindsym $mod+Shift+0 move container to workspace $workspace0
 
 assign [class="Chromium"] $workspace1
 assign [class="Gvim"] $workspace2
+assign [class="code"] $workspace2
 assign [class="jetbrains-studio"] $workspace2
 assign [class="jetbrains-idea-ce"] $workspace2
 assign [class="Termite"] $workspace3
@@ -228,6 +229,7 @@ bindsym --release Shift+Print exec --no-startup-id scrot -s ~/Picture/%Y-%m-%d-%
 bindsym $mod+t exec --no-startup-id Thunar
 bindsym $mod+b exec --no-startup-id chromium
 bindsym $mod+c exec --no-startup-id /opt/android-studio/bin/studio.sh
+bindsym $mod+v exec --no-startup-id code
 bindsym $mod+i exec --no-startup-id /opt/intellij-idea/bin/idea.sh
 bindsym $mod+u exec --no-startup-id unity-editor
 bindsym $mod+s exec --no-startup-id termite -e "tmux attach -t shell" 
