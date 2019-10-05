@@ -11,6 +11,11 @@ if_up_strictness address
 
 TEXT
 [
+  { "full_text" : "" , "color" : "\#fdf6e3" , "separator" : false , "separator_block_width" : 6 } ,
+  { "full_text" : "${kernel} (${machine})" , "separator" : false , "separator_block_width" : 6 } ,
+
+  { "full_text" : "<<<" , "color" : "\#dc322f" , "separator" : false , "separator_block_width" : 6 } ,
+
   { "full_text" : "" , "color" : "\#fdf6e3" , "separator" : false , "separator_block_width" : 6 } ,
   { "full_text" : ${if_up enp0s25} "${upspeed enp0s25} (${totalup enp0s25})" ,
                     ${else} ${if_up wlp3s0} "${upspeed wlp3s0} (${totalup wlp3s0})" ,
@@ -23,17 +28,8 @@ TEXT
                     ${else} ${if_up wlp3s0}  "${downspeed wlp3s0} (${totaldown wlp3s0})" ,
                     ${else} " * Network Off * " , ${endif}
                   ${endif}
-                  "min_width" : 108 , "align" : "right" , "separator" : false, "separator_block_width" : 6
+                  "min_width" : 108 , "align" : "right"
   } ,
-
-  { "full_text" : ">>>" , "color" : "\#dc322f" , "separator" : false , "separator_block_width" : 6 } ,
-
-  { "full_text" : "" , "color" : "\#fdf6e3" , "separator" : false , "separator_block_width" : 6 } ,
-  { "full_text" : "${nodename} (${machine})" } ,
-  { "full_text" : "" , "color" : "\#fdf6e3" , "separator" : false , "separator_block_width" : 6 } ,
-  { "full_text" : "${kernel}" , "separator" : false , "separator_block_width" : 6 } ,
-
-  { "full_text" : "<<<" , "color" : "\#dc322f" , "separator" : false , "separator_block_width" : 6 } ,
 
   { "full_text" : "" , "color" : "\#fdf6e3" , "separator" : false , "separator_block_width" : 6 } ,
   { "full_text" : "${fs_used_perc}% (${fs_used}/${fs_size})" } ,
@@ -42,7 +38,7 @@ TEXT
   { "full_text" : "" , "color" : "\#fdf6e3" , "separator" : false , "separator_block_width" : 6 } ,
   { "full_text" : "${memperc}% (${mem}/${memmax})" } ,
   { "full_text" : "" , "color" : "\#fdf6e3" , "separator" : false , "separator_block_width" : 6 } ,
-  { "full_text" : "${cpu cpu0}% (${freq_g} GHz)" , "min_width" : 88 , "align": "right" } ,
+  { "full_text" : "${cpu cpu0}% (${freq_g} GHz) (${processes} process)" , "min_width" : 88 , "align": "right" } ,
   { "full_text" : "" , "color" : "\#fdf6e3" , "separator" : false , "separator_block_width" : 6 } ,
   { "full_text" : "${hwmon temp 1}\u2103" } ,
   { "full_text" : "" , "color" : "\#fdf6e3" , "separator" : false , "separator_block_width" : 6 } ,
@@ -51,5 +47,5 @@ TEXT
   { "full_text" : ">>>" , "color" : "\#dc322f" , "separator" : false , "separator_block_width" : 6 } ,
 
   { "full_text" : "" , "color" : "\#fdf6e3" , "separator" : false , "separator_block_width" : 6 } ,
-  { "full_text" : "${uid_name 1000}" }
+  { "full_text" : "${uid_name 1000} " }
 ],
