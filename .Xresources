@@ -1,5 +1,5 @@
 ! FONTS
-URxvt.font: xft:Terminus:pixelsize=12
+URxvt.font: xft:SauceCodePro Nerd Font:SemiBold:pixelsize=11
 URxvt.letterSpace: 1
 
 ! SCROLLBAR

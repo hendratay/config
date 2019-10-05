@@ -5,26 +5,16 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
-Plugin 'scrooloose/nerdtree'
-Plugin 'tpope/vim-surround'
 Plugin 'kien/ctrlp.vim'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'bling/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'ryanoasis/vim-devicons'
+Plugin 'scrooloose/nerdtree'
 Plugin 'majutsushi/tagbar'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'benmills/vimux'
-Plugin 'yggdroot/indentline'
+Plugin 'christoomey/vim-tmux-navigator'
 call vundle#end()
 filetype plugin indent on
 
-
 "Misc
 let mapleader="\<Space>"
-nmap <leader>w :w<cr>
-nmap <leader>q :q<cr>
 set noswapfile
 "spaces and tabs
 set tabstop=4
@@ -32,12 +22,9 @@ set softtabstop=4
 set shiftwidth=4
 set expandtab
 set number
-set relativenumber
 "movement
 nnoremap B ^
 nnoremap E $
-nmap <esc>d 9j
-nmap <esc>u 9k
 nnoremap <esc>-j <C-W><C-J>
 nnoremap <esc>-k <C-W><C-K>
 nnoremap <esc>-l <C-W><C-L>
@@ -54,29 +41,6 @@ nmap <leader>p "+p
 nmap <leader>P "+P
 vmap <leader>p "+p
 vmap <leader>P "+P
-
-
-"User Interface
-"solarized
-syntax enable
-set background=dark
-colorscheme solarized
-call togglebg#map("<F5>")
-hi VertSplit ctermfg=0
-hi VertSplit ctermbg=0
-"vim airline/themes/devicons
-set laststatus=2
-let g:airline_powerline_fonts = 1
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#left_sep = ' '
-let g:airline#extensions#tabline#left_alt_sep = '|'
-let g:airline_theme='solarized'
-let g:WebDevIconsNerdTreeAfterGlyphPadding = ' '
-let g:WebDevIconsUnicodeDecorateFolderNodes = 1
-let g:DevIconsEnableFoldersOpenClose = 1
-"indentline
-let g:indentLine_char = '┆'
-
 
 "File Navigation
 "nerdtree
@@ -95,7 +59,6 @@ let g:ctrlp_custom_ignore = {
     \ 'link': 'some_bad_symbolic_links',
     \ }
 let g:ctrlp_working_path_mode = ''
-
 
 "Programming
 set cursorline
