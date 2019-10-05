@@ -7,8 +7,6 @@
 
 PS1='[\w] $ '
 
-alias ls='ls --color=auto'
-eval `dircolors ~/Repository/dircolors-solarized/dircolors.ansi-dark`
 
 # Default Editor
 export VISUAL=vim
@@ -49,3 +47,11 @@ export PATH=$PATH:/opt/flutter/bin
 
 # Ruby
 export PATH=$PATH:/home/hendratay/.gem/ruby/2.5.0/bin
+
+# Android
+export ANDROID_HOME=$HOME/Android/Sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/tools/bin
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+

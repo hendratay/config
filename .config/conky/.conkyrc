@@ -65,5 +65,5 @@ TEXT
   { "full_text" : "${uptime}" , "min_width" : 68 , "align" : "right" }  ,
 
   { "full_text" : "" , "color" : "\#fdf6e3" , "separator" : false , "separator_block_width" : 6 } ,
-  { "full_text" : "${exec xbacklight | cut -d '.' -f1}%" }
+  { "full_text" : "${exec xbacklight | cut -d '.' -f1}% " }
 ],

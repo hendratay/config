@@ -143,15 +143,17 @@ assign [class="Chromium"] $workspace1
 assign [class="Gvim"] $workspace2
 assign [class="code"] $workspace2
 assign [class="jetbrains-studio"] $workspace2
-assign [class="jetbrains-idea-ce"] $workspace2
 assign [class="Termite"] $workspace3
 assign [class="Zathura"] $workspace4
 assign [class="Unity"] $workspace6
 assign [class="mpv"] $workspace5
+assign [class="Godot"] $workspace6
 assign [class="Gimp"] $workspace6
+assign [class="krita"] $workspace6
 assign [class="Inkscape"] $workspace6
 assign [class="(?i)steam"] $workspace9
 
+for_window [title="Advanced REST client"] move to workspace " home"
 for_window [title="LINE"] move to workspace " home"
 for_window [title="Windows 7"] move to workspace " windows"
 for_window [title="macOS Sierra"] move to workspace " macintosh"
@@ -171,6 +173,9 @@ for_window [class="Unity" title="Hold On"] floating enable
 for_window [class="Steam" title="Friends"] floating enable
 for_window [class="Steam" title="Steam - News"] floating enable
 for_window [class="Termite"] fullscreen enable
+
+# temporary
+for_window [class="Godot" title="Domino"] floating enable
 
 floating_minimum_size 75 x 50
 floating_maximum_size -1 x -1
@@ -212,14 +217,17 @@ set $mode_display display: dp | vga
     }
 bindsym XF86Display mode "$mode_display"
 
+# Workspace in different monitor
+workspace " code" output VGA1
+
 # Multimedia Keys
 bindsym XF86AudioMute exec --no-startup-id amixer set Master toggle
 bindsym XF86AudioLowerVolume exec --no-startup-id amixer set Master 5%-
 bindsym XF86AudioRaiseVolume exec --no-startup-id amixer set Master 5%+
 bindsym XF86AudioMicMute exec --no-startup-id amixer set Capture toggle
-bindsym XF86Launch1 exec --no-startup-id ~/.config/touchpad.sh
+bindsym XF86TouchpadToggle exec --no-startup-id ~/.config/touchpad.sh
 bindsym XF86ScreenSaver exec --no-startup-id i3lock -t -i ~/Picture/battery.png -u
-#bindsym XF86WebCam exec --no-startup-id guvcview
+bindsym XF86WebCam exec --no-startup-id guvcview
 bindsym XF86AudioPrev exec --no-startup-id mpc prev
 bindsym XF86AudioPlay exec --no-startup-id mpc toggle
 bindsym XF86AudioNext exec --no-startup-id mpc next
@@ -230,17 +238,17 @@ bindsym $mod+t exec --no-startup-id Thunar
 bindsym $mod+b exec --no-startup-id chromium
 bindsym $mod+c exec --no-startup-id /opt/android-studio/bin/studio.sh
 bindsym $mod+v exec --no-startup-id code
-bindsym $mod+i exec --no-startup-id /opt/intellij-idea/bin/idea.sh
 bindsym $mod+u exec --no-startup-id unity-editor
 bindsym $mod+s exec --no-startup-id termite -e "tmux attach -t shell" 
 bindsym $mod+z exec --no-startup-id zathura
-bindsym $mod+w exec --no-startup-id virtualbox --startvm 'Windows 7'
-bindsym $mod+m exec --no-startup-id virtualbox --startvm 'macOS Sierra'
+bindsym $mod+w exec --no-startup-id /usr/lib/virtualbox/VirtualBoxVM --startvm 'Windows 7'
+bindsym $mod+m exec --no-startup-id /usr/lib/virtualbox/VirtualBoxVM --startvm 'macOS Sierra'
 bindsym $mod+a exec --no-startup-id /opt/genymobile/genymotion/player --vm-name 'Android Oreo'
-bindsym $mod+g exec --no-startup-id steam
+bindsym $mod+g exec --no-startup-id /opt/godot/Godot_v3.1.1-stable_x11.64
+#bindsym $mod+g exec --no-startup-id steam
 
 # Execute
-exec_always --no-startup-id feh --bg-scale ~/Picture/house.jpg
+exec_always --no-startup-id feh --bg-scale ~/Picture/bulbasaur.jpg
 exec --no-startup-id redshift-gtk
 exec --no-startup-id ~/.config/touchpad.sh
 exec --no-startup-id i3-msg 'workspace $workspace1 ; exec chromium'
