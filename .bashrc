@@ -44,6 +44,8 @@ export ARDUINO_PLATFORM_LIB_PATH=/usr/share/arduino/hardware/archlinux-arduino/a
 
 # Flutter
 export PATH=$PATH:/opt/flutter/bin
+export PATH=$PATH:/opt/flutter/bin/cache/dart-sdk/bin
+export PATH=$PATH:$HOME/.pub-cache/bin
 
 # Ruby
 export PATH=$PATH:/home/hendratay/.gem/ruby/2.5.0/bin
@@ -54,4 +56,3 @@ export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
-

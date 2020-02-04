@@ -140,6 +140,7 @@ bindsym $mod+Shift+9 move container to workspace $workspace9
 bindsym $mod+Shift+0 move container to workspace $workspace0
 
 assign [class="Chromium"] $workspace1
+assign [class="Emacs"] $workspace2
 assign [class="Gvim"] $workspace2
 assign [class="code"] $workspace2
 assign [class="jetbrains-studio"] $workspace2
@@ -147,6 +148,7 @@ assign [class="Termite"] $workspace3
 assign [class="Zathura"] $workspace4
 assign [class="Unity"] $workspace6
 assign [class="mpv"] $workspace5
+assign [class="Aseprite"] $workspace6
 assign [class="Godot"] $workspace6
 assign [class="Gimp"] $workspace6
 assign [class="krita"] $workspace6
@@ -236,6 +238,7 @@ bindsym --release Shift+Print exec --no-startup-id scrot -s ~/Picture/%Y-%m-%d-%
 
 bindsym $mod+t exec --no-startup-id Thunar
 bindsym $mod+b exec --no-startup-id chromium
+bindsym $mod+e exec --no-startup-id emacs
 bindsym $mod+c exec --no-startup-id /opt/android-studio/bin/studio.sh
 bindsym $mod+v exec --no-startup-id code
 bindsym $mod+u exec --no-startup-id unity-editor
@@ -244,11 +247,11 @@ bindsym $mod+z exec --no-startup-id zathura
 bindsym $mod+w exec --no-startup-id /usr/lib/virtualbox/VirtualBoxVM --startvm 'Windows 7'
 bindsym $mod+m exec --no-startup-id /usr/lib/virtualbox/VirtualBoxVM --startvm 'macOS Sierra'
 bindsym $mod+a exec --no-startup-id /opt/genymobile/genymotion/player --vm-name 'Android Oreo'
-bindsym $mod+g exec --no-startup-id /opt/godot/Godot_v3.1.1-stable_x11.64
+bindsym $mod+g exec --no-startup-id /opt/godot/Godot_v3.2-stable_mono_x11.64
 #bindsym $mod+g exec --no-startup-id steam
 
 # Execute
-exec_always --no-startup-id feh --bg-scale ~/Picture/bulbasaur.jpg
+exec_always --no-startup-id feh --bg-scale ~/Picture/done.jpg
 exec --no-startup-id redshift-gtk
 exec --no-startup-id ~/.config/touchpad.sh
 exec --no-startup-id i3-msg 'workspace $workspace1 ; exec chromium'
